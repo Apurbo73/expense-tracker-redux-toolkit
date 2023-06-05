@@ -1,17 +1,16 @@
-import React from "react";
+// import React from "react";
 
-const Layout = ({ children }) => {
-  return (
-    <div className="App">
-      <div className="header">
-        <h1>Expense Tracker</h1>
-      </div>
-      <div classname="main">
-        {children}
-      </div>
-      <div className="footer">©2023 Apurbo Deb Nath</div>
-    </div>
-  );
-};
+// const Layout = ({ children }) => {
+//   return (
+//     <div className="">
+//       <div className="">
+        
+//       </div>
+//       <div className="container text-center">
+//         {children}
+//       </div>
+//     </div>
+//   );
+// };
 
-export default Layout;
+// export default Layout;

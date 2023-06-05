@@ -1,17 +1,23 @@
-import "./App.css";
 import Balancee from "./components/Balancee";
 import Form from "./components/Form";
-import Layout from "./components/Layout";
-import Transactions from "./components/Transactions/Transactions";
+import Transaction from "./components/Transactions/Transaction";
 
 function App() {
   return (
     <div>
-      <Layout>
+      <h1 className="bg-primary text-light text-center p-3 ">Expense Tracker</h1>
+      <div className=" text-center container">
         <Balancee />
         <Form />
-        <Transactions />
-      </Layout>
+        <Transaction />
+      </div>
+      
+      <div
+        style={{ marginTop: 360 }}
+        className="footer text-center bg-primary text-light p-3"
+      >
+        ©2023 Apurbo Deb Nath
+      </div>
     </div>
   );
 }
