@@ -5,7 +5,7 @@ const Transaction = () => {
     <div>
       <p className="">Your Transactions:</p>
 
-      <div style={{backgroundColor:'#045ec2'}} className="btn text-light w-50 d-flex mx-auto  ">
+      <div style={{backgroundColor:'#045ec2'}} className="btn text-light w-50 d-flex mx-auto  p-3">
         <h5 className="mx-5">Book New</h5>
 
         <h5 className="mx-5">৳ 100</h5>

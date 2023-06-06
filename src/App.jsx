@@ -7,7 +7,7 @@ function App() {
     <div>
       <h1
         style={{ backgroundColor: "#045ec2" }}
-        className=" text-light text-center p-3 "
+        className=" text-light text-center  "
       >
         Expense Tracker
       </h1>
