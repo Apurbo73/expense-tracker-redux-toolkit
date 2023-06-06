@@ -64,6 +64,61 @@ export const transactionSlice = createSlice({
         state.isError = "false";
         state.isLoading = "false";
         state.transactions = action.payload;
+      })
+      .addCase(fetchTransactions.rejected, (state, action) => {
+        state.isError = "true";
+        state.isLoading = "false";
+        state.error = action.error.message;
+        state.transactions = [];
+      })
+      .addCase(createTransaction.pending, state => {
+        state.isError = "false";
+        state.isLoading = "true";
+      })
+      .addCase(createTransaction.fulfilled, (state, action) => {
+        state.isError = "false";
+        state.isLoading = "false";
+        state.transactions.push(action.payload);
+      })
+      .addCase(createTransaction.rejected, (state, action) => {
+        state.isError = "true";
+        state.isLoading = "false";
+        state.error = action.error.message;
+      })
+      .addCase(updateTransaction.pending, state => {
+        state.isError = "false";
+        state.isLoading = "true";
+      })
+      .addCase(updateTransaction.fulfilled, (state, action) => {
+        state.isError = "false";
+        state.isLoading = "false";
+        const indexToUpdate = state.transactions.findIndex(
+          t => t.id === action.payload.id
+        );
+        state.transactions[indexToUpdate] = action.payload;
+      })
+      .addCase(updateTransaction.rejected, (state, action) => {
+        state.isError = "true";
+        state.isLoading = "false";
+        state.error = action.error.message;
+      })
+      .addCase(removeTransaction.pending, state => {
+        state.isError = "false";
+        state.isLoading = "true";
+      })
+      .addCase(removeTransaction.fulfilled, (state, action) => {
+        state.isError = "false";
+        state.isLoading = "false";
+
+        state.transactions = state.transactions.filter(
+          t => t.id !== action.payload
+        );
+      })
+      .addCase(removeTransaction.rejected, (state, action) => {
+        state.isError = "true";
+        state.isLoading = "false";
+        state.error = action.error.message;
       });
   }
 });
+ export default transactionSlice.reducer;
